@@ -3,6 +3,12 @@
 
 This project allows users to create an account and utilize the RAWG API to search in a video game library. The user can add the title to their favorites page and view different parameters of that specific game such as rating. There is also a link to purchase the game.
 
+# Contributes to the project:
+Nicholas Held, Samer Saem Eldahr, Nadhi Woliye, Will Flemister, and Luis Garcia-Jacquez
+
+# Repo link: 
+https://github.com/samersaemeldahr/Video-Games
+
 ### Getting Started
 Getting Started with Create React App
 This project was bootstrapped with Create React App.
@@ -30,11 +36,6 @@ Your app is ready to be deployed!
 
 See the section about deployment for more information.
 
-### Contributes to the project:
-Nicholas Held, Samer Saem Eldahr, Nadhi Woliye, Will Flemister, and Luis Garcia-Jacquez
-
-### Repo link: 
-https://github.com/samersaemeldahr/Video-Games
 =======
 # Getting Started with Create React App
 
