@@ -1,3 +1,4 @@
+{
   "name": "video-games",
   "version": "0.1.0",
   "private": true,
@@ -28,15 +29,5 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  },
-  "dependencies": {
-    "@apollo/client": "^3.3.21",
-    "apollo-boost": "^0.4.9",
-    "apollo-link-context": "^1.0.20",
-    "apollo-server-express": "^3.0.1",
-    "bcrypt": "^5.0.1",
-    "express": "^4.17.1",
-    "graphql": "^15.5.1",
-    "jsonwebtoken": "^8.5.1"
   }
 }
