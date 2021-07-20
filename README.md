@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Video-Games
 
 This project allows users to create an account and utilize the RAWG API to search in a video game library. The user can add the title to their favorites page and view different parameters of that specific game such as rating. There is also a link to purchase the game.
@@ -106,4 +106,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> af6bb2c4c64ff0c41ff9d9e594a9b2438b5c20a8
