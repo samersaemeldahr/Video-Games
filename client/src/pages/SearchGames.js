@@ -19,13 +19,17 @@ const SearchGames = () => {
 
   const [saveGame, { error }] = useMutation(SAVE_GAME);
 
+
   // set up useEffect hook to save `savedGameIds` list to localStorage on component unmount
+
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
     return () => saveGameIds(savedGameIds);
   });
 
+
   // create method to search for games and set state on form submit
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -102,7 +106,9 @@ const SearchGames = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
+
                   placeholder='Search for a game'
+
                 />
               </Col>
               <Col xs={12} md={4}>
