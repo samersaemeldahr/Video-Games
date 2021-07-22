@@ -52,10 +52,6 @@ export const deleteGame = (gameId, token) => {
 
 // Search games on RAWG API
 // https://www.googleapis.com/books/v1/volumes?q=harry+potter
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 export const searchRawgGames = (query) => {
   // return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`); adding rawg request
   return fetch(`https://api.rawg.io/api/platforms?key=e22d7495b6e843b293ff4b81ad8574ae&search=${query}`)
