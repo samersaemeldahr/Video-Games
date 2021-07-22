@@ -42,9 +42,9 @@ module.exports = {
     const token = signToken(user);
     res.json({ token, user });
   },
-  // save a book to a user's `savedBooks` field by adding it to the set (to prevent duplicates)
+  // save a game to a user's `savedGames` field by adding it to the set (to prevent duplicates)
   // user comes from `req.user` created in the auth middleware function
-  async saveBook({ user, body }, res) {
+  async saveGame({ user, body }, res) {
     console.log(user);
     try {
       const updatedUser = await User.findOneAndUpdate(
@@ -58,8 +58,8 @@ module.exports = {
       return res.status(400).json(err);
     }
   },
-  // remove a book from `savedBooks`
-  async deleteBook({ user, params }, res) {
+  // remove a book from `savedGames`
+  async deleteGame({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
       { $pull: { savedBooks: { bookId: params.bookId } } },
