@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
+
 import { searchRawgGames } from '../utils/API';
+
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
 import { useMutation } from '@apollo/client';
@@ -19,13 +21,17 @@ const SearchGames = () => {
 
   const [saveGame, { error }] = useMutation(SAVE_GAME);
 
+
   // set up useEffect hook to save `savedGameIds` list to localStorage on component unmount
+
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
     return () => saveGameIds(savedGameIds);
   });
 
+
   // create method to search for games and set state on form submit
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -34,6 +40,7 @@ const SearchGames = () => {
     }
 
     try {
+
       const response = await searchRawgGames(searchInput);
 
       if (!response.ok) {
@@ -41,6 +48,7 @@ const SearchGames = () => {
       }
 
       const { items } = await response.json();
+
 
       // gameData needs to be edited to match the Game model in server
       const gameData = items.map((game) => ({
@@ -61,6 +69,7 @@ const SearchGames = () => {
   // create function to handle saving a game to our database
   const handleSaveGame = async (gameId) => {
     // find the game in `searchedGames` state by the matching id
+
     const gameToSave = searchedGames.find((game) => game.gameId === gameId);
 
     // get token
@@ -82,6 +91,7 @@ const SearchGames = () => {
       }
 
       // if game successfully saves to user's account, save game id to state
+
       setSavedGameIds([...savedGameIds, gameToSave.gameId]);
     } catch (err) {
       console.error(err);
@@ -102,7 +112,9 @@ const SearchGames = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
+
                   placeholder='Search for a game'
+
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -119,13 +131,16 @@ const SearchGames = () => {
         <h2>
           {searchedGames.length
             ? `Viewing ${searchedGames.length} results:`
+
             : 'Search for a game to begin'}
+
         </h2>
         <CardColumns>
           {searchedGames.map((game) => {
             return (
               <Card key={game.gameId} border='dark'>
                 {game.image ? (
+
                   <Card.Img src={game.image} alt={`The cover for ${game.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
@@ -137,6 +152,7 @@ const SearchGames = () => {
                       disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
                       className='btn-block btn-info'
                       onClick={() => handleSaveGame(game.gameId)}>
+
                       {savedGameIds?.some((savedGameId) => savedGameId === game.gameId)
                         ? 'This game has already been saved!'
                         : 'Save this game!'}
@@ -152,7 +168,9 @@ const SearchGames = () => {
   );
 };
 
+
 export default SearchGames;
+
 
 
 
