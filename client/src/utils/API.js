@@ -54,5 +54,5 @@ export const deleteBook = (bookId, token) => {
 // https://www.googleapis.com/books/v1/volumes?q=harry+potter
 export const searchGoogleBooks = (query) => {
   // return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`); adding rawg request
-  return fetch(`https://api.rawg.io/api/platforms?key=e22d7495b6e843b293ff4b81ad8574ae&name=${query}`)
+  return fetch(`https://api.rawg.io/api/platforms?key=e22d7495b6e843b293ff4b81ad8574ae&search=${query}`)
 };
