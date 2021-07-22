@@ -11,21 +11,27 @@ const typeDefs = gql`
     bookCount: Int
     savedBooks: [Book]
   }
-  type Book {
-    bookId: String
-    authors: [String]
-    description: String
-    title: String
-    image: String
-    link: String
+  type Game {
+    # gameId: String
+    name: [String]
+    released: String
+    background_image: String
+    rating: Integer
+    metacritic: Integer
   }
   input bookInput {
-    bookId: String
-    authors: [String]
-    description: String
-    title: String
-    image: String
-    link: String
+    # bookId: String
+    # authors: [String]
+    # description: String
+    # title: String
+    # image: String
+    # link: String
+        # gameId: String
+        name: [String]
+    released: String
+    background_image: String
+    rating: Integer
+    metacritic: Integer
   }
   type Auth {
     token: ID!
