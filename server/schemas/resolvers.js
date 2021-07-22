@@ -42,7 +42,7 @@ const resolvers = {
             return { token, user };
         },
 
-        saveBook: async (parent, { input }, context) => {
+        saveGame: async (parent, { input }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
@@ -54,7 +54,7 @@ const resolvers = {
             throw new AuthenticationError('Need to be logged in!')
         },
 
-        removeBook: async (parent, args, context) => {
+        removeGame: async (parent, args, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
