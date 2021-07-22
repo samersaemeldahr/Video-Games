@@ -28,21 +28,21 @@ export const loginUser = (userData) => {
   });
 };
 
-// save book data for a logged in user
-export const saveBook = (bookData, token) => {
+// save game data for a logged in user
+export const saveGame = (gameData, token) => {
   return fetch('/api/users', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookData),
+    body: JSON.stringify(gameData),
   });
 };
 
 // remove saved book data for a logged in user
-export const deleteBook = (bookId, token) => {
-  return fetch(`/api/users/books/${bookId}`, {
+export const deleteGame = (gameId, token) => {
+  return fetch(`/api/users/games/${gameId}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${token}`,
@@ -50,9 +50,12 @@ export const deleteBook = (bookId, token) => {
   });
 };
 
-// make a search to google books api
+// Search games on RAWG API
 // https://www.googleapis.com/books/v1/volumes?q=harry+potter
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 export const searchRawgGames = (query) => {
   // return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`); adding rawg request
   return fetch(`https://api.rawg.io/api/platforms?key=e22d7495b6e843b293ff4b81ad8574ae&search=${query}`)
