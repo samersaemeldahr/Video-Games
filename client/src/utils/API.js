@@ -50,7 +50,7 @@ export const deleteGame = (gameId, token) => {
   });
 };
 
-// make a search to google books api
+// Search games on RAWG API
 // https://www.googleapis.com/books/v1/volumes?q=harry+potter
 export const searchRawgGames = (query) => {
   // return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`); adding rawg request
