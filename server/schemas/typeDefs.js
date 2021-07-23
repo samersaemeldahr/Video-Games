@@ -8,30 +8,26 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    bookCount: Int
-    savedBooks: [Book]
+    gameCount: Int
+    savedGames: [Game]
   }
   type Game {
-    # gameId: String
-    name: [String]
+    gameId: String
+    name: String
     released: String
     background_image: String
     rating: Integer
     metacritic: Integer
+    platform: [String]
   }
-  input bookInput {
-    # bookId: String
-    # authors: [String]
-    # description: String
-    # title: String
-    # image: String
-    # link: String
-        # gameId: String
-        name: [String]
+  input gameInput {
+    gameId: String
+    name: String
     released: String
     background_image: String
     rating: Integer
     metacritic: Integer
+    platform: [String]
   }
   type Auth {
     token: ID!
@@ -43,8 +39,8 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(input: bookInput): User
-    removeBook(bookId: String!): User
+    saveGame(input: gameInput): User
+    removeGame(gameId: String!): User
   }
 `;
 
