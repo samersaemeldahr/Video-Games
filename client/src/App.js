@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SavedBooks from './pages/SavedBooks';
-import SearchBooks from './pages/SearchBooks';
+import SavedGames from './pages/SavedGames';
+import SearchGames from './pages/SearchGames';
 import Navbar from './components/Navbar';
 
 import {
@@ -38,8 +38,8 @@ function App() {
         <>
           <Navbar />
           <Switch>
-            <Route exact path='/' component={SearchBooks} />
-            <Route exact path='/saved' component={SavedBooks} />
+            <Route exact path='/' component={SearchGames} />
+            <Route exact path='/saved' component={SavedGames} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </>
