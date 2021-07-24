@@ -49,10 +49,11 @@ const SearchGames = () => {
       // gameData needs to be edited to match the Game model in server
       const gameData = items.map((game) => ({
         gameId: game.id,
-        authors: game.volumeInfo.authors || ['No author to display'],
-        title: game.volumeInfo.title,
-        description: game.volumeInfo.description,
-        image: game.volumeInfo.imageLinks?.thumbnail || '',
+        name: game.name,
+        released: game.released,
+        background_image: game.background_image,
+        rating: game.rating,
+        metacritic: game.metacritic
       }));
 
       setSearchedGames(gameData);
@@ -131,13 +132,13 @@ const SearchGames = () => {
           {searchedGames.map((game) => {
             return (
               <Card key={game.gameId} border='dark'>
-                {game.image ? (
-                  <Card.Img src={game.image} alt={`The cover for ${game.title}`} variant='top' />
+                {game.background_image ? (
+                  <Card.Img src={game.background_image} alt={`The cover for ${game.name}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{game.title}</Card.Title>
-                  <p className='small'>Authors: {game.authors}</p>
-                  <Card.Text>{game.description}</Card.Text>
+                  <Card.Title>{game.name}</Card.Title>
+                  <p className='small'>Released: {game.released}</p>
+                  <Card.Text>Rating: {game.rating}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
