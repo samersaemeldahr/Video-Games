@@ -9,14 +9,14 @@ export const LOGIN_USER = gql`
         _id
         username
         email
-        bookCount
-        savedBooks {
-          bookId
-          title
-          description
-          authors
-          image
-          link
+        gameCount
+        savedGames {
+          gameId
+          name
+          background-image
+          released
+          rating
+          metacritic
         }
       }
     }
@@ -36,40 +36,40 @@ export const ADD_USER = gql`
   }
 `;
 
-// SAVE_BOOK
-export const SAVE_BOOK = gql`
-  mutation saveBook($input: bookInput!) {
-    saveBook(input: $input) {
+// SAVE_GAME
+export const SAVE_GAME = gql`
+  mutation saveGame($input: gameInput!) {
+    saveGame(input: $input) {
       _id
       username
       email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+      savedGames {
+        gameId
+        name
+        background-image
+        released
+        rating
+        metacritic
       }
     }
   }
 `;
 
-// REMOVE_BOOK
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: String!) {
-    removeBook(bookId: $bookId) {
+// REMOVE_GAME
+export const REMOVE_GAME = gql`
+  mutation removeGame($gameId: String!) {
+    removeGame(gameId: $gameId) {
       _id
       username
       email
-      bookCount
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+      gameCount
+      savedGames {
+        gameId
+        name
+        background-image
+        released
+        rating
+        metacritic
       }
     }
   }
