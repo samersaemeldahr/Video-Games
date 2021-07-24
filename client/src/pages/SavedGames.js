@@ -60,11 +60,13 @@ const SavedGames = () => {
           {userData.savedGames.map((game) => {
             return (
               <Card key={game.gameId} border='dark'>
-                {game.image ? <Card.Img src={game.image} alt={`The cover for ${game.title}`} variant='top' /> : null}
+                {game.background_image ? <Card.Img src={game.background_image} alt={`The cover for ${game.name}`} variant='top' /> : null}
                 <Card.Body>
-                  <Card.Title>{game.title}</Card.Title>
-                  <p className='small'>Authors: {game.authors}</p>
-                  <Card.Text>{game.description}</Card.Text>
+                  <Card.Title>{game.name}</Card.Title>
+                  <p className='small'>Rating: {game.rating}</p>
+                  <p className='small'>Metacritic: {game.metacritic}</p>
+                  <p className='small'>Released: {game.released}</p>
+                  <Card.Text>{game.rating}</Card.Text>
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteGame(game.gameId)}>
                     Delete this Game!
                   </Button>
