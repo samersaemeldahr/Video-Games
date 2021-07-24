@@ -48,7 +48,7 @@ const SearchGames = () => {
 
       // gameData needs to be edited to match the Game model in server
       const gameData = results.map((game) => ({
-        gameId: game.id,
+        gameId: game.gameId,
         name: game.name,
         released: game.released,
         background_image: game.background_image,
