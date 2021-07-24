@@ -44,16 +44,16 @@ const SearchGames = () => {
         throw new Error('something went wrong!');
       }
 
-      const { items } = await response.json();
+      const { results } = await response.json();
 
       // gameData needs to be edited to match the Game model in server
-      const gameData = items.map((game) => ({
-        gameId: game.results.id,
-        name: game.results.name,
-        released: game.results.released,
-        background_image: game.results.background_image,
-        rating: game.results.rating,
-        metacritic: game.results.metacritic
+      const gameData = results.map((game) => ({
+        gameId: game.id,
+        name: game.name,
+        released: game.released,
+        background_image: game.background_image,
+        rating: game.rating,
+        metacritic: game.metacritic
       }));
 
       setSearchedGames(gameData);
@@ -62,6 +62,8 @@ const SearchGames = () => {
       console.error(err);
     }
   };
+
+
 
   // create function to handle saving a game to our database
   const handleSaveGame = async (gameId) => {
