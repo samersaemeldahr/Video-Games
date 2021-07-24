@@ -13,10 +13,10 @@ const gameSchema = new Schema({
     type: String,
   },
   rating: {
-    type: Integer,
+    type: Number,
   },
   metacritic: {
-    type: Integer,
+    type: Number,
   },
 
   // saved game id from rawg - changed bookId to gameId
