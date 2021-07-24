@@ -23,9 +23,9 @@ const SearchGames = () => {
   // set up useEffect hook to save `savedGameIds` list to localStorage on component unmount
 
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-  useEffect(() => {
-    return () => saveGameIds(savedGameIds);
-  });
+  // useEffect(() => {
+  //   return () => saveGameIds(savedGameIds);
+  // });
 
 
   // create method to search for games and set state on form submit

@@ -23,10 +23,7 @@ const gameSchema = new Schema({
   gameId: {
     type: String,
     required: true,
-  },
-  platform: [{
-    type: String,
-  }],
+  }
 });
 
 module.exports = gameSchema;

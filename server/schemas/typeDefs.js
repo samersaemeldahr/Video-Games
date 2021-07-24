@@ -18,7 +18,6 @@ const typeDefs = gql`
     background_image: String
     rating: Integer
     metacritic: Integer
-    platform: [String]
   }
   input gameInput {
     gameId: String
@@ -27,7 +26,6 @@ const typeDefs = gql`
     background_image: String
     rating: Integer
     metacritic: Integer
-    platform: [String]
   }
   type Auth {
     token: ID!
