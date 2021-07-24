@@ -48,12 +48,12 @@ const SearchGames = () => {
 
       // gameData needs to be edited to match the Game model in server
       const gameData = items.map((game) => ({
-        gameId: game.id,
-        name: game.name,
-        released: game.released,
-        background_image: game.background_image,
-        rating: game.rating,
-        metacritic: game.metacritic
+        gameId: game.results.id,
+        name: game.results.name,
+        released: game.results.released,
+        background_image: game.results.background_image,
+        rating: game.results.rating,
+        metacritic: game.results.metacritic
       }));
 
       setSearchedGames(gameData);

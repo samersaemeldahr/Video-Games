@@ -16,16 +16,16 @@ const typeDefs = gql`
     name: String
     released: String
     background_image: String
-    rating: Integer
-    metacritic: Integer
+    rating: Int
+    metacritic: Int
   }
   input gameInput {
     gameId: String
     name: String
     released: String
     background_image: String
-    rating: Integer
-    metacritic: Integer
+    rating: Int
+    metacritic: Int
   }
   type Auth {
     token: ID!

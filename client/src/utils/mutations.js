@@ -13,7 +13,7 @@ export const LOGIN_USER = gql`
         savedGames {
           gameId
           name
-          background-image
+          background_image
           released
           rating
           metacritic
@@ -46,7 +46,7 @@ export const SAVE_GAME = gql`
       savedGames {
         gameId
         name
-        background-image
+        background_image
         released
         rating
         metacritic
@@ -66,7 +66,7 @@ export const REMOVE_GAME = gql`
       savedGames {
         gameId
         name
-        background-image
+        background_image
         released
         rating
         metacritic
