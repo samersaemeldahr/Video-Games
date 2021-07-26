@@ -50,12 +50,12 @@ const AppNavbar = () => {
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
+              <Nav variant='pills' >
                 <Nav.Item>
-                  <Nav.Link eventKey='login' >Login</Nav.Link>
+                  <Nav.Link eventKey='login' className='bg-dark' style={{fontFamily: " 'Press Start 2P', sans-serif "}}>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link eventKey='signup' className='bg-dark ml-3' style={{fontFamily: " 'Press Start 2P', sans-serif "}}>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
