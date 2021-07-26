@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import Logo from '../assets/icons8-joystick-96.png';
 
 import Auth from '../utils/auth';
 import { searchRawgGames } from '../utils/API';
@@ -90,26 +91,27 @@ const SearchGames = () => {
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
-        <Container>
+      <Jumbotron fluid className='text-light bg-warning'>
+        <Container className='text-center'>
+        <img  alt='Logo' src={Logo}/>
           <h1>Search for Games!</h1>
           <Form onSubmit={handleFormSubmit}>
-            <Form.Row>
-              <Col xs={12} md={8}>
+            <Form.Row className="mb-3 justify-content-md-center">
+              <Col  xs lg="6">
+              <h3>All titles, all platforms, your bucket list!</h3>
                 <Form.Control
                   name='searchInput'
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
-                  size='lg'
-
                   placeholder='Search for a game'
-
                 />
               </Col>
-              <Col xs={12} md={4}>
-                <Button type='submit' variant='success' size='lg'>
-                  Submit Search
+              </Form.Row>
+              <Form.Row>
+              <Col>
+                <Button type='submit' variant='success'>
+                  Search
                 </Button>
               </Col>
             </Form.Row>
@@ -117,7 +119,7 @@ const SearchGames = () => {
         </Container>
       </Jumbotron>
 
-      <Container>
+      <Container className='text-center'>
         <h2>
           {searchedGames.length
             ? `Viewing ${searchedGames.length} results:`
