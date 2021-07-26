@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
+import Logo from '../assets/icons8-joystick-48.png';
 
 import Auth from '../utils/auth';
 
@@ -12,15 +13,16 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar bg='warning' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
+          <img  alt='Logo' src={Logo} />
+          <Navbar.Brand as={Link} to='/' className='text-dark'>
             Video Game Search
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/'>
+              <Nav.Link as={Link} to='/' className='text-dark'>
                 Search
               </Nav.Link>
               {/* if user is logged in show saved games and logout */}
@@ -32,7 +34,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link className='text-dark' onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -48,12 +50,12 @@ const AppNavbar = () => {
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
+              <Nav variant='pills' >
                 <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                  <Nav.Link eventKey='login' className='bg-dark' style={{fontFamily: " 'Press Start 2P', sans-serif "}}>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link eventKey='signup' className='bg-dark ml-3' style={{fontFamily: " 'Press Start 2P', sans-serif "}}>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
