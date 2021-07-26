@@ -60,7 +60,7 @@ const SearchGames = () => {
 
   // save a game to database
   const handleSaveGame = async (gameId) => {
-    
+
     // find the game in `searchedGames` state by the matching id
     const gameToSave = searchedGames.find((game) => game.gameId === gameId);
 
@@ -91,14 +91,13 @@ const SearchGames = () => {
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-warning'>
+      <Jumbotron fluid className='text-dark bg-warning' style={{ boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)' }}>
         <Container className='text-center'>
-        <img  alt='Logo' src={Logo}/>
-          <h1>Search for Games!</h1>
-          <Form onSubmit={handleFormSubmit}>
+          <h1>Video Game Search</h1>
+          <Form className='text-dark' onSubmit={handleFormSubmit}>
             <Form.Row className="mb-3 justify-content-md-center">
-              <Col  xs lg="6">
-              <h3>All titles, all platforms, your bucket list!</h3>
+              <Col xs lg="6">
+                <h3 className="mb-3">All titles, all platforms, your bucket list!</h3>
                 <Form.Control
                   name='searchInput'
                   value={searchInput}
@@ -107,10 +106,10 @@ const SearchGames = () => {
                   placeholder='Search for a game'
                 />
               </Col>
-              </Form.Row>
-              <Form.Row>
+            </Form.Row>
+            <Form.Row>
               <Col>
-                <Button type='submit' variant='success'>
+                <Button type='submit' variant='dark'>
                   Search
                 </Button>
               </Col>
@@ -119,12 +118,12 @@ const SearchGames = () => {
         </Container>
       </Jumbotron>
 
-      <Container className='text-center'>
-        <h2>
+      <Container className='text-center bg-warning' style={{ boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)' }}>
+        <h4 className='p-3'>
           {searchedGames.length
             ? `Viewing ${searchedGames.length} results:`
-            : 'Search for a game to begin'}
-        </h2>
+            : '- Your search results will show up here -'}
+        </h4>
         <CardColumns>
           {searchedGames.map((game) => {
             return (
@@ -133,10 +132,10 @@ const SearchGames = () => {
                   <Card.Img src={game.background_image} alt={`The cover for ${game.name}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{game.name}</Card.Title>
-                  <p className='small'>Released: {game.released}</p>
+                  <Card.Title className='bg-dark text-light p-3'>{game.name}</Card.Title>
+                  <Card.Text>Released: {game.released}</Card.Text>
                   <Card.Text>Rating: {game.rating}</Card.Text>
-                  <Card.Text>Metacritic: {game.metacritic}</Card.Text>
+                  <Card.Text>Metacritic: {game.metacritic ? game.metacritic : 'N/A'}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
