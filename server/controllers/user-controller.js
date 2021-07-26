@@ -1,6 +1,7 @@
 // import user model
 const { User } = require('../models');
-// import sign token function from auth
+
+// import sign token
 const { signToken } = require('../utils/auth');
 
 module.exports = {
@@ -27,7 +28,6 @@ module.exports = {
     res.json({ token, user });
   },
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
-  // {body} is destructured req.body
   async login({ body }, res) {
     const user = await User.findOne({ $or: [{ username: body.username }, { email: body.email }] });
     if (!user) {
@@ -58,6 +58,7 @@ module.exports = {
       return res.status(400).json(err);
     }
   },
+  
   // remove a game from `savedGames`
   async deleteGame({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
