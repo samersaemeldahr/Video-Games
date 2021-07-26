@@ -12,7 +12,6 @@ const SavedGames = () => {
   const { loading, data } = useQuery(GET_ME);
   const userData = data?.me || {};
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteGame = async (gameId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -31,14 +30,14 @@ const SavedGames = () => {
         throw new Error('Something went wrong!');
       }
 
-      // upon success, remove book's id from localStorage
+      // Remove game ID from localStorage
       removeGameId(gameId);
     } catch (err) {
       console.error(err);
     }
   };
 
-  // if data isn't here yet, say so
+  // Loading until we recieve data
   if (loading) {
     return <h2>LOADING...</h2>;
   }
