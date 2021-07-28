@@ -17,6 +17,6 @@ router.route('/login').post(login);
 
 router.route('/me').get(authMiddleware, getSingleUser);
 
-router.route('/games/:gameId').delete(authMiddleware, deleteGame);
+router.route('/games/:id').delete(authMiddleware, deleteGame);
 
 module.exports = router;

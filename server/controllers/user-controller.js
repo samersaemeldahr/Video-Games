@@ -63,7 +63,7 @@ module.exports = {
   async deleteGame({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
-      { $pull: { savedGames: { gameId: params.gameId } } },
+      { $pull: { savedGames: { id: params.id } } },
       { new: true }
     );
     if (!updatedUser) {

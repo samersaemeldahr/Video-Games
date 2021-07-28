@@ -11,7 +11,7 @@ export const LOGIN_USER = gql`
         email
         gameCount
         savedGames {
-          gameId
+          id
           name
           background_image
           released
@@ -44,7 +44,7 @@ export const SAVE_GAME = gql`
       username
       email
       savedGames {
-        gameId
+        id
         name
         background_image
         released
@@ -57,14 +57,14 @@ export const SAVE_GAME = gql`
 
 // REMOVE_GAME
 export const REMOVE_GAME = gql`
-  mutation removeGame($gameId: String!) {
-    removeGame(gameId: $gameId) {
+  mutation removeGame($id: String!) {
+    removeGame(id: $id) {
       _id
       username
       email
       gameCount
       savedGames {
-        gameId
+        id
         name
         background_image
         released

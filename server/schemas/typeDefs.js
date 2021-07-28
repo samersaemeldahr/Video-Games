@@ -12,7 +12,7 @@ const typeDefs = gql`
     savedGames: [Game]
   }
   type Game {
-    gameId: String
+    id: String
     name: String
     released: String
     background_image: String
@@ -20,7 +20,7 @@ const typeDefs = gql`
     metacritic: Int
   }
   input gameInput {
-    gameId: String
+    id: String
     name: String
     released: String
     background_image: String
@@ -38,7 +38,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveGame(input: gameInput): User
-    removeGame(gameId: String!): User
+    removeGame(id: String!): User
   }
 `;
 
