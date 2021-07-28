@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
-import Logo from '../assets/icons8-joystick-96.png';
 
 import Auth from '../utils/auth';
 import { searchRawgGames } from '../utils/API';
