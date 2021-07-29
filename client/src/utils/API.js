@@ -50,7 +50,7 @@ export const deleteGame = (id, token) => {
 };
 
 // Search games on RAWG API
-let API_KEY = process.env.apikey
+// let API_KEY = process.env.apikey
 export const searchRawgGames = (query) => {
-  return fetch(`https://api.rawg.io/api/games?key=${API_KEY}=${query}`)
+  return fetch(`https://api.rawg.io/api/games?key=e22d7495b6e843b293ff4b81ad8574ae&search=${query}`)
 };
