@@ -9,6 +9,15 @@ Nicholas Held, Samer Saem Eldahr, Nadhi Woliye, Will Flemister, and Luis Garcia-
 # Repo link: 
 https://github.com/samersaemeldahr/Video-Games
 
+# Screenshots of work :
+Main search page
+![screenshot1](./Assets/video-game-screenshot-1.png)
+searching game 
+![screenshot2](./Assets/video-game-screenshot-2.png)
+Login/signup
+![screenshot3](./Assets/video-game-screenshot-3.png)
+
+
 ### Getting Started
 Getting Started with Create React App
 This project was bootstrapped with Create React App.
