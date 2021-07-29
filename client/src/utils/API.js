@@ -40,8 +40,8 @@ export const saveGame = (gameData, token) => {
 };
 
 // for a logged in user, remove saved game data 
-export const deleteGame = (gameId, token) => {
-  return fetch(`/api/users/games/${gameId}`, {
+export const deleteGame = (id, token) => {
+  return fetch(`/api/users/games/${id}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${token}`,

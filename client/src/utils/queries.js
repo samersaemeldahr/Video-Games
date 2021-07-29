@@ -8,7 +8,7 @@ export const GET_ME = gql`
             email
             gameCount
             savedGames {
-                gameId
+                id
                 name
                 background_image
                 released

@@ -12,7 +12,7 @@ const SavedGames = () => {
   const { loading, data } = useQuery(GET_ME);
   const userData = data?.me || {};
 
-  const handleDeleteGame = async (gameId) => {
+  const handleDeleteGame = async (id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -21,7 +21,7 @@ const SavedGames = () => {
 
     try {
       const { data } = await removeGame({
-        variables: { gameId },
+        variables: { id },
       });
 
       console.log(data);
@@ -31,7 +31,7 @@ const SavedGames = () => {
       }
 
       // Remove game ID from localStorage
-      removeGameId(gameId);
+      removeGameId(id);
     } catch (err) {
       console.error(err);
     }
@@ -58,7 +58,7 @@ const SavedGames = () => {
         <CardColumns>
           {userData.savedGames.map((game) => {
             return (
-              <Card key={game.gameId} border='dark'>
+              <Card key={game.id} border='dark'>
                 {game.background_image ? <Card.Img src={game.background_image} alt={`The cover for ${game.name}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{game.name}</Card.Title>
@@ -66,7 +66,7 @@ const SavedGames = () => {
                   <p className='small'>Metacritic: {game.metacritic}</p>
                   <p className='small'>Released: {game.released}</p>
                   <Card.Text>{game.rating}</Card.Text>
-                  <Button className='btn-block btn-danger' onClick={() => handleDeleteGame(game.gameId)}>
+                  <Button className='btn-block btn-danger' onClick={() => handleDeleteGame(game.id)}>
                     Delete this Game!
                   </Button>
                 </Card.Body>

@@ -17,7 +17,7 @@ const gameSchema = new Schema({
   metacritic: {
     type: Number,
   },
-  gameId: {
+  id: {
     type: String,
     required: true,
   }
